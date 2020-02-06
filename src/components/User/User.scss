@@ -119,12 +119,20 @@
     font-weight: bold;
   }
 
+  .header-text {
+    margin-right: 10px;
+  }
+
   .header-actions {
     display: flex;
     align-items: center;
 
     @media screen and (max-width: 450px) {
       margin-left: auto;
+    }
+
+    @media screen and (max-width: 380px) {
+      margin-top: 10px;
     }
 
     .likes-count,

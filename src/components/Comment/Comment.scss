@@ -1,0 +1,29 @@
+.comment {
+  margin-top: 15px;
+
+  .userName {
+    margin-right: 8px;
+    font-weight: bold;
+  }
+
+  .date {
+    color: #808080;
+  }
+
+  .comment-text {
+    position: relative;
+    padding: 15px 20px;
+    margin-top: 5px;
+    background: #f2fbff;
+    border: 1px solid #c4cbcf;
+    z-index: 1;
+
+    .triangle {
+      fill: #f2fbff;
+      stroke: #c4cbcf;
+      position: absolute;
+      left: 20px;
+      top: -8px;
+  }
+  }
+}

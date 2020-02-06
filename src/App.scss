@@ -1,0 +1,14 @@
+#root {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+
+  a {
+    text-decoration: underline;
+    color: #005DA1;
+
+    &:visited {
+      color: #005DA1;
+    }
+  }
+}

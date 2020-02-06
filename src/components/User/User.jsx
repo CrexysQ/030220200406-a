@@ -25,10 +25,43 @@ const User = () => {
     })
   }
 
+  const renderStaticComments = () => {
+    const staticComments = [
+      {
+        id: 1,
+        userName: 'Самуил',
+        date: '13 октября 2011',
+        text: 'Привет, Верунь! ниче себе ты крутая. фотка класс!!!! '
+      },
+      {
+        id: 2,
+        userName: 'Лилия Семёновна',
+        date: '14 октября 2011',
+        text: 'Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент, это и есть всемирно известный центр огранки алмазов и торговли бриллиантами?'
+      },
+      {
+        id: 3,
+        userName: 'Лилия Семёновна',
+        date: '14 октября 2011',
+        text: 'Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?'
+      }]
+
+    if (typeof commentsArray === undefined || commentsArray === null) {     
+      localStorage.setItem('comments', JSON.stringify(staticComments))
+    }
+    setComments(staticComments);
+
+    return staticComments.map((item, index) => {
+      return (
+        <Comment name={item.userName} date={item.date} text={item.text} key={index} />
+      )
+    })
+  }
+
   const keyUpHandle = (event) => {
     if (event.ctrlKey && event.key === 'Enter') {
       createNewPost();
-    }  
+    }
   }
 
   const createNewPost = () => {
@@ -49,7 +82,7 @@ const User = () => {
           <div className='userInfo'>
             <div className="left-side">
               <div className="user-image">
-                <img src={userImage} alt={'UserImage'}/>
+                <img src={userImage} alt={'UserImage'} />
               </div>
             </div>
 
@@ -96,7 +129,7 @@ const User = () => {
             {
               commentsArray ?
                 renderComments()
-                : null
+                : renderStaticComments()
             }
           </div>
         </section>
